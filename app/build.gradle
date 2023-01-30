@@ -29,6 +29,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -44,4 +49,7 @@ dependencies {
     //rxjava_rxandroid
     implementation 'io.reactivex.rxjava2:rxjava:2.1.9'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
 }
