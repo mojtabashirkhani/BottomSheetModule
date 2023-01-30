@@ -1,7 +1,8 @@
 package com.slimshady.bottomsheetmodule;
 
 
-import static com.slimshady.util.ScreenUtils.getWindowHeight;
+
+import static com.slimshady.bottomsheetmodule.util.ScreenUtils.getWindowHeight;
 
 import android.content.Context;
 import android.view.View;
@@ -37,7 +38,7 @@ public class BaseBottomSheet<V extends ViewBinding> extends AbstractBottomSheet 
 
     @Override
     protected void initBottomSheetView(Context context) {
-//        viewBottomsheet.setBackgroundResource(R.drawable.bottom_dialog_shape);
+        viewBottomsheet.setBackgroundResource(R.drawable.bottom_dialog_shape);
         bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
 
         //Retrieve bottom sheet parameters

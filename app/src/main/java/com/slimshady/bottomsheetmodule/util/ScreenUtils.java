@@ -1,4 +1,4 @@
-package com.slimshady.util;
+package com.slimshady.bottomsheetmodule.util;
 
 import android.app.Activity;
 import android.content.Context;

@@ -12,7 +12,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.slimshady.bottomsheetmodule.R;
-import com.slimshady.bottomsheetmodule.searchWatcher.SearchWatcher;
+import com.slimshady.bottomsheetmodule.util.searchWatcher.SearchWatcher;
 
 public abstract class AbstractBottomSheet {
 

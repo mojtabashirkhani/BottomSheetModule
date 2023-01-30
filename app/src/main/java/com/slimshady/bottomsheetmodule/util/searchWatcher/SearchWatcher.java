@@ -1,4 +1,4 @@
-package com.slimshady.bottomsheetmodule.searchWatcher;
+package com.slimshady.bottomsheetmodule.util.searchWatcher;
 
 
 import android.content.Context;
