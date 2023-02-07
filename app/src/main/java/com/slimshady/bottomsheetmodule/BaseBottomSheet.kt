@@ -22,13 +22,13 @@ open class BaseBottomSheet<V : ViewBinding>(
             = 0
     @JvmField
     protected var peekHeight = 0
-    override fun initBottomSheetView(context: Context?) {
+    override fun initBottomSheetView(context: Context) {
         viewBottomsheet.setBackgroundResource(R.drawable.bottom_dialog_shape)
         bottomSheetBehavior?.state = BottomSheetBehavior.STATE_COLLAPSED
 
         //Retrieve bottom sheet parameters
         val bottomSheetLayoutParams = viewBottomsheet.layoutParams
-        bottomSheetLayoutParams.height = getWindowHeight(context!!)
+        bottomSheetLayoutParams.height = getWindowHeight(context)
         expandedHeight = bottomSheetLayoutParams.height
         peekHeight =
             (expandedHeight / 2.3).toInt() //Peek height to 70% of expanded height (Change based on your view)

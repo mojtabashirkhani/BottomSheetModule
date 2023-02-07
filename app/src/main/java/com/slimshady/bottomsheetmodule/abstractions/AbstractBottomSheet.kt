@@ -12,7 +12,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.bottomsheet.BottomSheetBehavior.BottomSheetCallback
 
 abstract class AbstractBottomSheet {
-    protected abstract fun initBottomSheetView(context: Context?)
+    protected abstract fun initBottomSheetView(context: Context)
     abstract fun closeBottomSheet()
     protected open fun initSearchView(
         context: Context,
