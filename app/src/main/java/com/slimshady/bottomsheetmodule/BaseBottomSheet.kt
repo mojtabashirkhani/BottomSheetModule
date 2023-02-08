@@ -15,12 +15,9 @@ open class BaseBottomSheet<V : ViewBinding>(
     protected var parentLayoutBottomSheetResId: Int
 ) : AbstractBottomSheet() {
     protected var viewBottomsheet: View
-    @JvmField
     protected var bottomSheetBehavior: BottomSheetBehavior<*>?
-    @JvmField
     protected var expandedHeight //Height of bottom sheet in expanded state
             = 0
-    @JvmField
     protected var peekHeight = 0
     override fun initBottomSheetView(context: Context) {
         viewBottomsheet.setBackgroundResource(R.drawable.bottom_dialog_shape)

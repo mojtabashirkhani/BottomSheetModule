@@ -22,21 +22,15 @@ open class BaseBottomSheetRecyclerView<V : ViewBinding>(
     bottomSheetRecyclerViewBuilder: BaseBottomSheetRecyclerViewBuilder<V>?
 ) : BaseBottomSheet<V>(viewBinding, context, parentLayoutBottomSheetResId), IRecyclerView {
     protected var view: View
-    @JvmField
     protected var recyclerView: RecyclerView
-    @JvmField
     protected var btnApply: Button
-    @JvmField
     protected var searchView: SearchWatcher
-    @JvmField
     protected var closeBtn: ImageView
-    @JvmField
     protected var searchIcon: ImageView
-    @JvmField
     protected var searchEditText: EditText
     private val layoutManager: RecyclerView.LayoutManager?
     private val dividerItemDecoration: DividerItemDecoration?
-    override fun initRecyclerView() {
+    final override fun initRecyclerView() {
         initBottomSheetView(context)
         recyclerView.layoutManager = layoutManager
         if (dividerItemDecoration != null) recyclerView.addItemDecoration(dividerItemDecoration)
