@@ -21,9 +21,10 @@ import android.widget.ImageView
 import com.slimshady.bottomsheetmodule.util.searchWatcher.Watcher
 import com.slimshady.bottomsheetmodule.util.AdapterAction
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.slimshady.bottomsheetmodule.MainActivity
 import java.util.*
 
-class BottomSheetDynamicListMultiSelect<T : BaseBottomSheetRecyclerModel, V : ViewBinding>(
+class BottomSheetDynamicListMultiSelect<V : ViewBinding>(
     viewBinding: V,
     context: Context,
     parentLayoutBottomSheetResId: Int,
@@ -31,8 +32,8 @@ class BottomSheetDynamicListMultiSelect<T : BaseBottomSheetRecyclerModel, V : Vi
     bottomSheetRecyclerViewBuilder: BaseBottomSheetRecyclerViewBuilder<V>?,
     private val isSearchEnable: Boolean,
     private val searchHint: String,
-    private val items: ArrayList<T>,
-    private val adapterItemMultiSelectListener: AdapterItemMultiSelectListener<T>
+    private val items: ArrayList<BaseBottomSheetRecyclerModel>,
+    private val adapterItemMultiSelectListener: MainActivity
 ) : BaseBottomSheetRecyclerView<V>(
     viewBinding,
     context,
@@ -40,12 +41,12 @@ class BottomSheetDynamicListMultiSelect<T : BaseBottomSheetRecyclerModel, V : Vi
     layoutManager,
     bottomSheetRecyclerViewBuilder
 ), IDynamicList, IApplyButton, ISearch {
-    private var asyncSearchListAdapter: AsyncSearchListAdapter<T>? = null
+    private var asyncSearchListAdapter: AsyncSearchListAdapter<BaseBottomSheetRecyclerModel>? = null
     private var buttonLayoutParams: ConstraintLayout.LayoutParams? = null
     private var collapsedMargin //Button margin in collapsed state
             = 0
     private var buttonHeight = 0
-    private var filteredListBaseSearchDbModel: ArrayList<T>? = null
+    private var filteredListBaseSearchDbModel: ArrayList<BaseBottomSheetRecyclerModel>? = null
     override fun initListAdapter() {
         asyncSearchListAdapter = AsyncSearchListAdapter(true)
         asyncSearchListAdapter?.submitList(items)
@@ -109,7 +110,7 @@ class BottomSheetDynamicListMultiSelect<T : BaseBottomSheetRecyclerModel, V : Vi
 
     private fun filter(
         query: String,
-        items: ArrayList<T>
+        items: ArrayList<BaseBottomSheetRecyclerModel>
     ) {
         filteredListBaseSearchDbModel = ArrayList()
         for (i in items.indices) {

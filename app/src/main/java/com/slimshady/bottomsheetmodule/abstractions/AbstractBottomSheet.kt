@@ -48,7 +48,8 @@ abstract class AbstractBottomSheet {
             override fun onSlide(bottomSheet: View, slideOffset: Float) {
                 if (slideOffset > 0) //Sliding happens from 0 (Collapsed) to 1 (Expanded) - if so, calculate margins
                     buttonLayoutParams?.topMargin =
-                        ((expandedHeight - buttonHeight * 1.2 - collapsedMargin - buttonHeight / 2) * slideOffset + collapsedMargin).toInt() else  //If not sliding above expanded, set initial margin
+                        ((expandedHeight - buttonHeight * 1.2 - collapsedMargin - buttonHeight / 2) * slideOffset + collapsedMargin).toInt()
+                else  //If not sliding above expanded, set initial margin
                     buttonLayoutParams?.topMargin = collapsedMargin
                 btnApply.layoutParams =
                     buttonLayoutParams //Set layout params to button (margin from top)
