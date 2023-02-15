@@ -7,6 +7,12 @@ public class BaseBottomSheetRecyclerModel {
     private String type;
     private boolean isSelected = false;
 
+    public BaseBottomSheetRecyclerModel(String name, String type, boolean isSelected) {
+        this.name = name;
+        this.type = type;
+        this.isSelected = isSelected;
+    }
+
     public String getType() {
         return type;
     }
