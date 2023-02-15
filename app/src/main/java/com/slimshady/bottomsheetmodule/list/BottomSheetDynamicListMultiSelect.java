@@ -107,6 +107,8 @@ public class BottomSheetDynamicListMultiSelect<T extends BaseBottomSheetRecycler
         btnApply.setLayoutParams(buttonLayoutParams);
         recyclerView.setPadding(0,0,0, (int) (buttonHeight *2.2));
 
+        Log.d("BottomSheetDynamic", "collapsedMargin: " + collapsedMargin + " expandedHeight: " + expandedHeight + " buttonHeight: "+ buttonHeight);
+
         initBottomSheetCallback(bottomSheetBehavior, btnApply, buttonLayoutParams, collapsedMargin, expandedHeight, buttonHeight);
     }
 

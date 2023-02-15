@@ -2,6 +2,7 @@ package com.slimshady.bottomsheetmodule.list;
 
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -68,6 +69,8 @@ public class BottomSheetStaticListMultiSelect<T extends BaseBottomSheetRecyclerM
         buttonLayoutParams.topMargin = collapsedMargin;
         btnApply.setLayoutParams(buttonLayoutParams);
         recyclerView.setPadding(0,0,0, (int) (buttonHeight *2.2));
+
+        Log.d("BottomSheetDynamic", "collapsedMargin: " + collapsedMargin + " expandedHeight: " + expandedHeight + " buttonHeight: "+ buttonHeight);
 
         initBottomSheetCallback(bottomSheetBehavior, btnApply, buttonLayoutParams, collapsedMargin, expandedHeight, buttonHeight);
 

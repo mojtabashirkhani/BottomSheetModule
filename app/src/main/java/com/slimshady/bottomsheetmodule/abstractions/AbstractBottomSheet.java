@@ -2,6 +2,7 @@ package com.slimshady.bottomsheetmodule.abstractions;
 
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -59,9 +60,10 @@ public abstract class AbstractBottomSheet {
             @Override
             public void onSlide(@NonNull View bottomSheet, float slideOffset) {
                 if (slideOffset > 0) //Sliding happens from 0 (Collapsed) to 1 (Expanded) - if so, calculate margins
-                    buttonLayoutParams.topMargin = (int) (((expandedHeight - buttonHeight *1.2) - collapsedMargin - buttonHeight / 2) * slideOffset + collapsedMargin);
+                    buttonLayoutParams.topMargin = (int) (((expandedHeight - buttonHeight *2) - collapsedMargin - buttonHeight) * slideOffset + collapsedMargin);
                 else //If not sliding above expanded, set initial margin
                     buttonLayoutParams.topMargin = collapsedMargin;
+                Log.d("AbstractBottomSheet", String.valueOf(buttonLayoutParams.topMargin));
                 btnApply.setLayoutParams(buttonLayoutParams); //Set layout params to button (margin from top)
             }
         });
